@@ -25,9 +25,9 @@ const CardText = styled.p`
   margin-top: 8px;
 `
 
-const Card = ({data}) => (
+const Card = ({data, date}) => (
   <CardWrapper>
-    <CardDate>July 27, 2018</CardDate>
+    <CardDate>{date}</CardDate>
     <CardText>{data}</CardText>
     <TwitterButton data={data} />
   </CardWrapper>

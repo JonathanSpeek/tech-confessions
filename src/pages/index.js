@@ -16,7 +16,7 @@ const IndexPage = (data) => (
     <Header />
     <SubmitButton />
     <CardList>{data.data.allContentfulCard.edges.map(edge => (
-      <Card data={edge.node.text} />
+      <Card data={edge.node.text} date={edge.node.date} />
     ))}
     </CardList>
   </div>

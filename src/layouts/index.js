@@ -37,6 +37,7 @@ export const query = graphql`
       edges {
         node {
           text
+          date
         }
       }
     }
