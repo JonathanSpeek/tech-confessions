@@ -71,7 +71,8 @@ class SubmitButton extends React.Component {
           <form 
             name="tech-confession"
             method="POST"
-            netlify
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
           >
             <ModalTextArea 
               id="confession" 
