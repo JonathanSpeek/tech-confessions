@@ -11,12 +11,13 @@ const CardList = styled.div`
   justify-items: center;
 `
 
-const IndexPage = () => (
+const IndexPage = (data) => (
   <div>
     <Header />
     <SubmitButton />
-    <CardList>
-      <Card />
+    <CardList>{data.data.allContentfulCard.edges.map(edge => (
+      <Card data={edge.node.text} />
+    ))}
     </CardList>
   </div>
 )

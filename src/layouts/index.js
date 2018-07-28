@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import IndexPage from '../pages/index'
 
 import './index.css'
 
-const Layout = ({ children, data }) => (
+const Layout = ({ data }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -14,7 +15,7 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <div>
-      {children()}
+      <IndexPage data={data} />
     </div>
   </div>
 )
@@ -30,6 +31,13 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulCard {
+      edges {
+        node {
+          text
+        }
       }
     }
   }
