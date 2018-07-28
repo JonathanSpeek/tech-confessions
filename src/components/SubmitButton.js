@@ -20,6 +20,7 @@ const Button = styled.button`
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   outline: none;
   &:hover {
+    cursor: pointer;
     transform: scale(1.1, 1.1);
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
   }
@@ -27,7 +28,19 @@ const Button = styled.button`
 
 const ModalTitle = styled.h2`
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
+`
+
+const ModalTextArea = styled.textarea`
+  border: 3px solid #07033D;
+  height: 200px;
+  width: 95%;
+  border-radius: 12px;
+	padding: 8px;
+  outline: none;
+  font-size: 18px;
+  margin: 12px 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `
 
 class SubmitButton extends React.Component {
@@ -48,8 +61,26 @@ class SubmitButton extends React.Component {
     return(
       <ButtonWrapper>
         <Button onClick={this.onOpenModal}>Submit Yours</Button>
-        <Modal open={open} onClose={this.onCloseModal} center>
+        <Modal 
+          open={open} 
+          onClose={this.onCloseModal} 
+          center
+          classNames={{ modal: 'custom-modal' }}
+          >
           <ModalTitle>Send us your tech confession 👯</ModalTitle>
+          <form 
+            name="tech-confession"
+            method="POST"
+            netlify
+          >
+            <ModalTextArea 
+              id="confession" 
+              name="confession" 
+              placeholder="I spend most of my day flipping between Netflix and Slack. 🤷‍"
+              >
+            </ModalTextArea>
+            <Button type="submit">Send</Button>
+          </form>
         </Modal>
       </ButtonWrapper>
     )

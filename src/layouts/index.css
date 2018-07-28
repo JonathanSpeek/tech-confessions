@@ -7,3 +7,6 @@ body {
   margin: 0;
   color: #07033D;
 }
+.custom-modal {
+  border-radius: 24px;
+}
