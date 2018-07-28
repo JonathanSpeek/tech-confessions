@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header'
-import SubmitButton from '../components/SubmitButton';
+import SubmitForm from '../components/SubmitForm';
 import Card from '../components/Card';
 
 const CardList = styled.div`
@@ -14,11 +14,11 @@ const CardList = styled.div`
 const IndexPage = (data) => (
   <div>
     <Header />
-    <SubmitButton />
     <CardList>{data.data.allContentfulCard.edges.map(edge => (
       <Card data={edge.node.text} date={edge.node.date} />
     ))}
     </CardList>
+    <SubmitForm />
   </div>
 )
 
