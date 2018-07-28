@@ -2,12 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 
 const HeaderGroup = styled.div`
+  display: grid;
+  grid-template-columns: center;
+  justify-items: center;
+  margin-top: 64px;
 `
 
 const HeaderTitle = styled.h1`
+  font-weight: 900;
+  font-size: 72px;
+  text-align: center;
+  margin: 24px 0;
 `
 
 const HeaderSubTitle = styled.p`
+  font-size: 24px;
+  text-align: center;
+  margin-top: 0;
 `
 
 const Header = () => (
