@@ -13,12 +13,17 @@ const HeaderTitle = styled.h1`
   font-size: 72px;
   text-align: center;
   margin: 24px 0;
+
+  @media (max-width: 640px) {
+    font-size: 56px;
+  }
 `
 
 const HeaderSubTitle = styled.p`
   font-size: 24px;
   text-align: center;
   margin-top: 0;
+  padding: 0 18px;
 `
 
 const Header = () => (
