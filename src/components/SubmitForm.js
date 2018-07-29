@@ -7,6 +7,9 @@ const FormWrapper = styled.div`
   grid-template-rows: 2;
   justify-items: center;
   margin: 32px 0;
+  @media (max-width: 640px) {
+    margin: 0;
+  }
 `
 
 const Button = styled.button`
@@ -20,6 +23,7 @@ const Button = styled.button`
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   outline: none;
+  border: none;
   &:hover {
     cursor: pointer;
     transform: scale(1.1, 1.1);
@@ -38,6 +42,9 @@ const FormTextArea = styled.textarea`
   font-size: 18px;
   margin: 12px 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @media (max-width: 640px) {
+    width: 340px;
+  }
 `
 
 class SubmitForm extends React.Component {
