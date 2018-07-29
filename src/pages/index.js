@@ -14,11 +14,11 @@ const CardList = styled.div`
 const IndexPage = (data) => (
   <div>
     <Header />
+    <SubmitForm />
     <CardList>{data.data.allContentfulCard.edges.map(edge => (
       <Card data={edge.node.text} date={edge.node.date} />
     ))}
     </CardList>
-    <SubmitForm />
   </div>
 )
 
