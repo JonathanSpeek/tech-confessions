@@ -10,7 +10,6 @@ const FormWrapper = styled.div`
 `
 
 const Button = styled.button`
-  justify-self: end;
   font-weight: 600;
   color: #FFF;
   text-transform: uppercase;
@@ -41,24 +40,46 @@ const FormTextArea = styled.textarea`
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `
 
-const SubmitForm = () => (
-  <FormWrapper>
-    <form 
-      name="tech-confession"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <FormTextArea 
-        id="confession" 
-        name="confession" 
-        placeholder="I spend most of my day flipping between Netflix and Slack. 🤷‍"
+class SubmitForm extends React.Component {
+  constructor(props) {
+		super(props)
+		this.state = {active: false}
+	}
+
+	click = () => (
+    this.setState({active: true})
+    
+  )
+  
+  render() {
+    return (
+      <FormWrapper>
+        <Button id="open-form" 
+          onClick={this.click.bind(this)}
+          style={{display: this.state.active ? 'none' : 'block'}}
         >
-      </FormTextArea>
-      <br />
-      <Button type="submit">Submit Yours</Button>
-    </form>
-  </FormWrapper>
-)
+          Submit yours
+        </Button>
+        <form
+          name="tech-confession"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          id="form"
+          style={{display: this.state.active ? 'block' : 'none'}}
+        >
+          <FormTextArea 
+            id="confession" 
+            name="confession" 
+            placeholder="I spend most of my day flipping between Netflix and Slack. 🤷‍"
+            >
+          </FormTextArea>
+          <br />
+          <Button type="submit">Send</Button>
+        </form>
+      </FormWrapper>
+    )
+  }
+}
 
 export default SubmitForm
