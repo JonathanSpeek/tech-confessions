@@ -2,13 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 const TwitterWrapper = styled.div`
+  cursor: pointer;
   justify-self: end;
   svg {
     transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   svg:hover path {
     fill: #07033D;
-}
+  }
+  svg:hover {
+    transform: scale(1.1, 1.1);
+    -webkit-filter: drop-shadow(2px 12px 8px rgba(0,0,0,0.5));      
+    filter: drop-shadow(2px 12px 8px rgba(0,0,0,0.5));
+  }
 `
 
 const TwitterButton = (data) => (
