@@ -7,13 +7,14 @@ import './index.css'
 
 const Layout = ({ data }) => (
   <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
+    <Helmet>
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="theme-color" content="#fff" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="Description" content="A guilt-free place for us to confess our tech sins 🙏" />
+      <meta name="Keywords" content="Silicon Valley, Tech Confessions, Software, Developer, Designer, Tech, Product" />
+      <link rel="shortcut icon" href={data.allContentfulAsset.edges[0].node.file.url} />
+    </Helmet>
     <div>
       <IndexPage data={data} />
     </div>
@@ -31,6 +32,17 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulAsset {
+      edges {
+        node {
+          file {
+            url
+            fileName
+            contentType
+          }
+        }
       }
     }
     allContentfulCard {
