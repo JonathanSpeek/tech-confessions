@@ -7,7 +7,6 @@ import './index.css'
 
 const Layout = ({ data }) => (
   <div>
-    {console.log(data)}
     <Helmet>
       <title>{data.site.siteMetadata.title}</title>
       <meta name="theme-color" content="#fff" />
