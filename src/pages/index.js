@@ -22,6 +22,7 @@ const LoadMore = styled.button`
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   outline: none;
   border: none;
+  margin-bottom: 32px;
   &:hover {
     cursor: pointer;
     transform: scale(1.1, 1.1);
