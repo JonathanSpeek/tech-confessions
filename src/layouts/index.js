@@ -8,7 +8,7 @@ import './index.css'
 const Layout = ({ data }) => (
   <div>
     <Helmet>
-      <title>{data.site.siteMetadata.title}</title>
+      <title>Tech Confessions 🙏</title>
       <meta name="theme-color" content="#fff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="Description" content="A guilt-free place for us to confess our tech sins 🙏" />
@@ -28,12 +28,7 @@ Layout.propTypes = {
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
+  query ContentQuery {
     allContentfulAsset {
       edges {
         node {
