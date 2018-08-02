@@ -102,6 +102,7 @@ class SubmitForm extends React.Component {
             name="confession" 
             placeholder="I spend most of my day flipping between Netflix and Slack. 🤷‍"
             required
+            minlength="10"
             >
           </FormTextArea>
           <br />
