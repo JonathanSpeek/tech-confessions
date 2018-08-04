@@ -21,6 +21,15 @@ module.exports = {
         spaceId: process.env.SPACEID,
         accessToken: process.env.ACCESSTOKEN
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-66781553-3",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
     }
   ],
 }
