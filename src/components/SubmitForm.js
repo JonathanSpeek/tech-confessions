@@ -103,8 +103,8 @@ class SubmitForm extends React.Component {
             placeholder="I spend most of my day flipping between Netflix and Slack. 🤷‍"
             required
             minlength="10"
-            >
-          </FormTextArea>
+          />
+          <input type="hidden" name="form-name" value="tech-confession" />
           <br />
           <CloseButton onClick={this.close.bind(this)}>Cancel</CloseButton>
           <Button type="submit">Confess</Button>
