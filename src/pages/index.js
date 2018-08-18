@@ -83,7 +83,7 @@ class IndexPage extends React.Component {
         <SubmitForm />
         <CardList>
           {cards.slice(0, this.state.cardsToShow).map(card => (
-            <Card data={card.text} date={card.date} />
+            <Card key={card.text} data={card.text} date={card.date} />
           ))}
           {!this.state.showingMore && (
           <LoadMore
