@@ -30,6 +30,7 @@ module.exports = {
         anonymize: true,
         respectDNT: true,
       },
-    }
+    },
+    'gatsby-plugin-offline',
   ],
 }
