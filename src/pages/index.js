@@ -98,7 +98,6 @@ class IndexPage extends React.Component {
             Load More
           </LoadMore>
           )}
-          <BackToTopButton scrollYPosition={this.this.state.scrollYPosition}/>
         </CardList>
       </div>
     )
