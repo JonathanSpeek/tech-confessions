@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import TwitterButton from './TwitterButton';
+import TwitterButton from './TwitterButton'
 
 const CardWrapper = styled.div`
   width: 500px;
-  border-radius: 24px;
+  border-radius: 12px;
+  background-color: #FAFAFA;
   padding: 18px 32px;
   margin: 24px 0;
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);

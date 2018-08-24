@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header'
-import SubmitForm from '../components/SubmitForm';
-import Card from '../components/Card';
+import SubmitForm from '../components/SubmitForm'
+import Card from '../components/Card'
 
 const CardList = styled.div`
   margin-top: 64px 18px 18px 24px;
@@ -56,6 +56,7 @@ class IndexPage extends React.Component {
       this.setState({ cardsToShow: this.state.cardsToShow + 10 })
     }
     this.ticking = false
+    this.setState({scrollYPosition: window.scrollY })
   }
 
   handleScroll = () => {
@@ -97,6 +98,7 @@ class IndexPage extends React.Component {
             Load More
           </LoadMore>
           )}
+          <BackToTopButton scrollYPosition={this.this.state.scrollYPosition}/>
         </CardList>
       </div>
     )
