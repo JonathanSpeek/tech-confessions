@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Header from '../components/Header'
 import SubmitForm from '../components/SubmitForm'
 import Card from '../components/Card'
+import BackToTopButton from '../components/BackToTopButton'
+import ScrollToTop from 'react-scroll-up'
 
 const CardList = styled.div`
   margin-top: 64px 18px 18px 24px;
@@ -99,6 +101,9 @@ class IndexPage extends React.Component {
           </LoadMore>
           )}
         </CardList>
+        <ScrollToTop showUnder={160}>
+          <BackToTopButton />
+        </ScrollToTop>
       </div>
     )
   }
