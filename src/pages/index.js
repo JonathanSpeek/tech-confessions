@@ -6,11 +6,39 @@ import Card from '../components/Card'
 import BackToTopButton from '../components/BackToTopButton'
 import ScrollToTop from 'react-scroll-up'
 
+const SkipLink = styled.a`
+  position: absolute;
+	top: -999vw;
+  background: #3E30E0;
+	color: #fff;
+	padding: .75em 1.5em;
+  border-radius: 4px;
+	
+	&:focus {
+		top: 1em;
+		left: 50%;
+		transform: translate(-50%);
+		outline: none;
+		box-shadow: 0 0 0 5px hsl(20, 10%, 80%), 0 0 0 10px #3E30E0;
+	}
+`
+
 const CardList = styled.div`
   margin-top: 64px 18px 18px 24px;
   display: grid;
   grid-template-columns: 1;
   justify-items: center;
+  &:target {
+	  animation: highlight 1s ease-out;
+  }
+  &:focus {
+	  outline: none;
+  }
+  @keyframes highlight {
+    50% {
+      background-color: #3e30e080;
+    }
+  }
 `
 
 const LoadMore = styled.button`
@@ -82,9 +110,10 @@ class IndexPage extends React.Component {
 
     return(
       <div>
+        <SkipLink href="#card-list">Skip to main content</SkipLink>
         <Header />
         <SubmitForm />
-        <CardList>
+        <CardList id="card-list" tabIndex="-1">
           {cards.slice(0, this.state.cardsToShow).map(card => (
             <Card key={card.text} data={card.text} date={card.date} />
           ))}
