@@ -14,6 +14,7 @@ const Layout = ({ data }) => (
       <meta name="Description" content="A guilt-free place for us to confess our tech sins 🙏" />
       <meta name="Keywords" content="Silicon Valley, Tech Confessions, Software, Developer, Designer, Tech, Product" />
       <link rel="shortcut icon" href={data.allContentfulAsset.edges[0].node.file.url} />
+      <html lang="en" />
     </Helmet>
     <div>
       <IndexPage data={data} />

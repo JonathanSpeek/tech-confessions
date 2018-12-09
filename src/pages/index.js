@@ -13,13 +13,13 @@ const SkipLink = styled.a`
 	color: #fff;
 	padding: .75em 1.5em;
   border-radius: 4px;
+  text-decoration: none;
 	
 	&:focus {
 		top: 1em;
 		left: 50%;
 		transform: translate(-50%);
 		outline: none;
-		box-shadow: 0 0 0 5px hsl(20, 10%, 80%), 0 0 0 10px #3E30E0;
 	}
 `
 
@@ -49,14 +49,20 @@ const LoadMore = styled.button`
   padding: 18px 32px;
   border-radius: 32px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.05s linear;
   outline: none;
   border: none;
   margin-bottom: 32px;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &:focus {
+		outline: 2px dotted #3E30E0;
+	}
   &:hover {
     cursor: pointer;
-    transform: scale(1.1, 1.1);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transform: scale(1.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
   }
 `
 
