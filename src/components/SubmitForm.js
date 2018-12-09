@@ -21,14 +21,20 @@ const Button = styled.button`
   border-radius: 32px;
   text-decoration: none;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.05s linear;
   outline: none;
   border: none;
+  &::-moz-focus-inner {
+    border: 0;
+  }
   &:hover {
     cursor: pointer;
-    transform: scale(1.1, 1.1);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
   }
+  &:focus {
+		outline: 2px dotted #3E30E0;
+	}
 `
 
 const CloseButton = styled.button`
@@ -39,52 +45,60 @@ const CloseButton = styled.button`
   padding: 18px 32px;
   border-radius: 32px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.05s linear;
   outline: none;
   border: none;
   margin-right: 16px;
   &:hover {
     cursor: pointer;
-    transform: scale(1.1, 1.1);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
   }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &:focus {
+		outline: 2px dotted #3E30E0;
+	}
 `
 
-const FormTextArea = styled.textarea`
+const FormLabel = styled.label`
+  display: block;
+  font-size: .9em;
+  padding: 0 0 4px 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+`
+
+const FormInput = styled.input`
   justify-self: center;
-  border: 3px solid #07033D;
-  height: 40px;
+  border: 2px solid #07033D;
   width: 500px;
   border-radius: 12px;
-	padding: 8px;
+	padding: 12px;
   outline: none;
   font-size: 18px;
   margin: 12px 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  &:focus {
+    outline: none;
+    border-color: #3E30E0;
+  }
   @media (max-width: 640px) {
     width: 340px;
   }
 `
 
 class SubmitForm extends React.Component {
-  constructor(props) {
-		super(props)
-		this.state = {active: false}
+  state = {
+    active: false
 	}
-
-	open = () => (
-    this.setState({active: true})
-  )
-
-  close = () => (
-    this.setState({active: false})
-  )
   
   render() {
     return (
       <FormWrapper>
         <Button id="open-form" 
-          onClick={this.open.bind(this)}
+          onClick={() => this.setState({active: true})}
           style={{display: this.state.active ? 'none' : 'block'}}
         >
           Submit yours
@@ -97,16 +111,20 @@ class SubmitForm extends React.Component {
           id="form"
           style={{display: this.state.active ? 'block' : 'none'}}
         >
-          <FormTextArea 
+          <FormLabel for="confession">Your Confession</FormLabel>
+          <FormInput
             id="confession" 
-            name="confession" 
+            name="confession"
+            type="text"
             placeholder="I spend most of my day flipping between Netflix and Slack. 🤷‍"
             required
-            minlength="10"
+            aria-required="true"
+            minLength="10"
+            maxLength="240"
           />
           <input type="hidden" name="form-name" value="tech-confession" />
           <br />
-          <CloseButton onClick={this.close.bind(this)}>Cancel</CloseButton>
+          <CloseButton onClick={() => this.setState({active: false})}>Cancel</CloseButton>
           <Button type="submit">Confess</Button>
         </form>
       </FormWrapper>

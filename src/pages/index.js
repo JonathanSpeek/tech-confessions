@@ -6,11 +6,39 @@ import Card from '../components/Card'
 import BackToTopButton from '../components/BackToTopButton'
 import ScrollToTop from 'react-scroll-up'
 
+const SkipLink = styled.a`
+  position: absolute;
+	top: -999vw;
+  background: #3E30E0;
+	color: #fff;
+	padding: .75em 1.5em;
+  border-radius: 4px;
+  text-decoration: none;
+	
+	&:focus {
+		top: 1em;
+		left: 50%;
+		transform: translate(-50%);
+		outline: none;
+	}
+`
+
 const CardList = styled.div`
   margin-top: 64px 18px 18px 24px;
   display: grid;
   grid-template-columns: 1;
   justify-items: center;
+  &:target {
+	  animation: highlight 1s ease-out;
+  }
+  &:focus {
+	  outline: none;
+  }
+  @keyframes highlight {
+    50% {
+      background-color: #3e30e080;
+    }
+  }
 `
 
 const LoadMore = styled.button`
@@ -21,14 +49,20 @@ const LoadMore = styled.button`
   padding: 18px 32px;
   border-radius: 32px;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
-  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.05s linear;
   outline: none;
   border: none;
   margin-bottom: 32px;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &:focus {
+		outline: 2px dotted #3E30E0;
+	}
   &:hover {
     cursor: pointer;
-    transform: scale(1.1, 1.1);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transform: scale(1.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
   }
 `
 
@@ -82,9 +116,10 @@ class IndexPage extends React.Component {
 
     return(
       <div>
+        <SkipLink href="#card-list">Skip to main content</SkipLink>
         <Header />
         <SubmitForm />
-        <CardList>
+        <CardList id="card-list" tabIndex="-1">
           {cards.slice(0, this.state.cardsToShow).map(card => (
             <Card key={card.text} data={card.text} date={card.date} />
           ))}
