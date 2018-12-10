@@ -14,13 +14,6 @@ const SkipLink = styled.a`
 	padding: .75em 1.5em;
   border-radius: 4px;
   text-decoration: none;
-	
-	&:focus {
-		top: 1em;
-		left: 50%;
-		transform: translate(-50%);
-		outline: none;
-	}
 `
 
 const CardList = styled.div`
