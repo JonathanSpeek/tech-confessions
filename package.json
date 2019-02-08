@@ -6,7 +6,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.5.1",
     "dotenv": "^6.0.0",
-    "gatsby": "^1.9.277",
+    "gatsby": "^2.0.0",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-netlify-cache": "^0.1.0",
