@@ -93,11 +93,11 @@ class SubmitForm extends React.Component {
   state = {
     active: false
 	}
-  
+
   render() {
     return (
       <FormWrapper>
-        <Button id="open-form" 
+        <Button id="open-form"
           onClick={() => this.setState({active: true})}
           style={{display: this.state.active ? 'none' : 'block'}}
         >
@@ -111,9 +111,9 @@ class SubmitForm extends React.Component {
           id="form"
           style={{display: this.state.active ? 'block' : 'none'}}
         >
-          <FormLabel for="confession">Your Confession</FormLabel>
+          <FormLabel htmlFor="confession">Your Confession</FormLabel>
           <FormInput
-            id="confession" 
+            id="confession"
             name="confession"
             type="text"
             placeholder="I spend most of my day flipping between Netflix and Slack. 🤷‍"

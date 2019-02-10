@@ -35,7 +35,7 @@ const Header = () => (
       <path d="M49 0C22 0 0 22 0 49C0 57.6 2.3 66 6.6 73.5L6.8 73.8L2.4 88.8C1.8 90.7 2.4 92.8 3.8 94.2C5.2 95.6 7.3 96.1 9.2 95.6L24.3 91.3L24.6 91.5C32 95.7 40.4 98 48.9 98C75.9 98 97.9 76 97.9 49C97.9 22 76 0 49 0ZM49 94.1C40.7 94.1 32.7 91.8 25.6 87.6L24.9 87.2L8.2 92C7.6 92.2 7 92 6.5 91.6C6.1 91.2 5.9 90.5 6.1 89.9L10.9 73.3L10.5 72.6C6.1 65.4 3.8 57.3 3.8 49C3.8 24.1 24.1 3.8 49 3.8C73.9 3.8 94.2 24.1 94.2 49C94.2 73.9 73.9 94.1 49 94.1Z" fill="#3E30E0"/>
     </svg>
     <HeaderTitle>Tech Confessions</HeaderTitle>
-    <HeaderSubTitle>A guilt-free place for us to confess our tech sins 🙏</HeaderSubTitle>
+    <HeaderSubTitle>A guilt-free place for us to confess our tech sins <span role="img" aria-label="prayer hands emoji">🙏</span></HeaderSubTitle>
   </HeaderGroup>
 )
 
