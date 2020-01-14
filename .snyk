@@ -605,3 +605,5 @@ patch:
         patched: '2020-01-14T20:08:23.100Z'
     - gatsby > relay-compiler > babel-preset-fbjs > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2020-01-14T20:08:23.100Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-01-14T20:14:59.079Z'
