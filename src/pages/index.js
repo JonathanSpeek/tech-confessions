@@ -37,7 +37,7 @@ export default () => (
       }
     `}
     render={data => (
-      <div>
+      <>
         <Helmet>
           <title>Tech Confessions</title>
           <meta name="theme-color" content="#fff" />
@@ -47,16 +47,15 @@ export default () => (
           <link rel="shortcut icon" href={data.allContentfulAsset.edges[0].node.file.url} />
           <html lang="en" />
         </Helmet>
-        <div>
-          <SkipLink href="#card-list">Skip to main content</SkipLink>
-          <Header />
-          <SubmitForm />
-          <CardList />
-          <ScrollToTop showUnder={160}>
-            <BackToTopButton />
-          </ScrollToTop>
-        </div>
-      </div>
+        <div class="warning">This project is no longer maintained...</div>
+        <SkipLink href="#card-list">Skip to main content</SkipLink>
+        <Header />
+        <SubmitForm />
+        <CardList />
+        <ScrollToTop showUnder={160}>
+          <BackToTopButton />
+        </ScrollToTop>
+      </>
     )}
   />
 )

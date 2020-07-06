@@ -8,3 +8,11 @@ body {
   color: #07033D;
   background-color: #f6f7fd;
 }
+
+.warning {
+  text-align: center;
+  background-color: #bb0909;
+  color: #fff;
+  padding: 8px;
+  font-weight: 600;
+}
